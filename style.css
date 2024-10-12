@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+}
+
+/* O container ocupa sempre 100% da altura visível do ecrã (100vh) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Garante que todas as colunas tenham a mesma altura */
+    flex: 1;
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* Garante que o container ocupa o espaço restante da página (navbar = 60px) */
+}
+
+.col {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ads {
+    flex: 1;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    flex: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens no início da coluna */
+    /* height: 100%; Define a altura total para o conteúdo principal */
+}
+
+/* Adicionando containers separados para a imagem e os botões */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 85%; /* Altura da imagem é 85% da altura do parent */
+    margin-bottom: 10px; /* Espaço entre a imagem e os botões */
+}
+
+.image-container img {
+    max-width: 100%; /* Imagem nunca excede a largura do div pai */
+    max-height: 100%; /* Imagem nunca excede a altura do div pai */
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Estilização do container dos botões */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15%; /* Altura dos botões é 15% da altura do parent */
+    margin-top: 10px; /* Espaço acima dos botões */
+}
+
+/* Ajustes para os botões e contagem de votos ficarem alinhados */
+.vote-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os botões e a contagem */
+}
+
+.vote-buttons button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.vote-buttons .downvote {
+    background-color: #f44336;
+}
+
+.vote-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Estilo para a contagem de votos */
+.vote-count {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo para a página de Política de Privacidade */
+.main-content-privacy {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Limite de largura para o conteúdo */
+    margin: 20px auto; /* Centraliza a seção no meio da página */
+    text-align: left; /* O texto da política de privacidade geralmente fica alinhado à esquerda */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.main-content-privacy h1,
+.main-content-privacy h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.main-content-privacy p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Ajusta a altura do container para manter a página sempre visível */
+.container-privacy {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Conteúdo começa do topo */
+    flex-direction: column;
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* Altura dinâmica, subtraindo a altura do navbar */
+}
+
+/* Ajuste para links dentro do conteúdo de privacidade */
+.main-content-privacy a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.main-content-privacy a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para listas, se necessário */
+.main-content-privacy ul {
+    list-style: disc inside;
+    margin-left: 20px;
+}
+
+.main-content-privacy li {
+    margin-bottom: 10px;
+}
