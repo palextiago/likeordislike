@@ -1,114 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Like or Dislike</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Add icon library -->
-    <script src="https://kit.fontawesome.com/d6b8a2240b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/d6b8a2240b.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://http://likeordislike.xyz/">
-    <meta property="og:title" content="Like or Dislike">
-    <meta property="og:description" content="Make your choice!">
-    <meta property="og:image" content="/images/cover.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://http://likeordislike.xyz/" />
+    <meta property="og:title" content="Like or Dislike" />
+    <meta property="og:description" content="Make your choice!" />
+    <meta property="og:image" content="/images/cover.png" />
 
-    <meta name="google-adsense-account" content="ca-pub-8749594276260367">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8749594276260367"
-        crossorigin="anonymous"></script>
-</head>
+    <meta name="google-adsense-account" content="ca-pub-8749594276260367" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8749594276260367"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://fundingchoicesmessages.google.com/i/pub-8749594276260367?ers=1"
+    ></script>
+    <script>
+      (function () {
+        function signalGooglefcPresent() {
+          if (!window.frames["googlefcPresent"]) {
+            if (document.body) {
+              const iframe = document.createElement("iframe");
+              iframe.style =
+                "width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;";
+              iframe.style.display = "none";
+              iframe.name = "googlefcPresent";
+              document.body.appendChild(iframe);
+            } else {
+              setTimeout(signalGooglefcPresent, 0);
+            }
+          }
+        }
+        signalGooglefcPresent();
+      })();
+    </script>
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Like or Dislike</div>
+      <div class="logo">Like or Dislike</div>
     </nav>
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Column 1: Google Ads -->
-        <div class="col ads">
-            <!-- VertAd -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8749594276260367"
-                data-ad-slot="8716504593" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <!-- Column 1: Google Ads -->
+      <div class="col ads">
+        <!-- VertAd -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-8749594276260367"
+          data-ad-slot="8716504593"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
+      <!-- Column 2: Image and Upvote/Downvote Buttons -->
+      <div class="col main-content">
+        <!-- Image Container -->
+        <div class="image-container">
+          <img id="random-image" src="" alt="Random image" />
         </div>
 
-        <!-- Column 2: Image and Upvote/Downvote Buttons -->
-        <div class="col main-content">
-            <!-- Image Container -->
-            <div class="image-container">
-                <img id="random-image" src="" alt="Random image">
+        <!-- Buttons and Vote Count -->
+        <div class="buttons-container">
+          <div class="vote-buttons">
+            <!-- Upvote Button -->
+            <button class="upvote" id="upvote-button">
+              <i class="fa-solid fa-thumbs-up"></i> Like
+            </button>
+
+            <!-- Vote Count Display -->
+            <div class="vote-count" id="vote-count">
+              Upvotes: 0 | Downvotes: 0
             </div>
 
-            <!-- Buttons and Vote Count -->
-            <div class="buttons-container">
-                <div class="vote-buttons">
-                    <!-- Upvote Button -->
-                    <button class="upvote" id="upvote-button"><i class="fa-solid fa-thumbs-up"></i> Like</button>
-
-                    <!-- Vote Count Display -->
-                    <div class="vote-count" id="vote-count">
-                        Upvotes: 0 | Downvotes: 0
-                    </div>
-
-                    <!-- Downvote Button -->
-                    <button class="downvote" id="downvote-button"><i class="fa-solid fa-thumbs-down"></i> Dislike</button>
-                </div>
-            </div>
+            <!-- Downvote Button -->
+            <button class="downvote" id="downvote-button">
+              <i class="fa-solid fa-thumbs-down"></i> Dislike
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Column 3: Google Ads -->
-        <div class="col ads">
-            <!-- VertAd -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8749594276260367"
-                data-ad-slot="8716504593" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
+      <!-- Column 3: Google Ads -->
+      <div class="col ads">
+        <!-- VertAd -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-8749594276260367"
+          data-ad-slot="8716504593"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
     </div>
 
     <!-- Footer -->
-    <footer style="text-align: center; margin-top: 20px;">
-        <p>&copy; 2024 Like or Dislike. All rights reserved.</p>
-        <p><a href="/privacy-policy.html" target="_blank">Privacy Policy</a></p>
+    <footer style="text-align: center; margin-top: 20px">
+      <p>&copy; 2024 Like or Dislike. All rights reserved.</p>
+      <p><a href="/privacy-policy.html" target="_blank">Privacy Policy</a></p>
     </footer>
 
     <script>
-        // Initialize votes as local variables (non-persistent)
-        let upvotes = 0;
-        let downvotes = 0;
+      // Initialize votes as local variables (non-persistent)
+      let upvotes = 0;
+      let downvotes = 0;
 
-        // Function to update the vote count on the UI
-        function updateVoteCount() {
-            document.getElementById('vote-count').innerText = `Upvotes: ${upvotes} | Downvotes: ${downvotes}`;
-        }
+      // Function to update the vote count on the UI
+      function updateVoteCount() {
+        document.getElementById(
+          "vote-count"
+        ).innerText = `Upvotes: ${upvotes} | Downvotes: ${downvotes}`;
+      }
 
-        // Function to update the random image
-        function updateRandomImage() {
-            const randomImage = `https://picsum.photos/1280/720?random=${Math.random()}`;
-            document.getElementById('random-image').src = randomImage;
-        }
+      // Function to update the random image
+      function updateRandomImage() {
+        const randomImage = `https://picsum.photos/1280/720?random=${Math.random()}`;
+        document.getElementById("random-image").src = randomImage;
+      }
 
-        // Handle upvote button click
-        document.getElementById('upvote-button').addEventListener('click', function () {
-            upvotes++;
-            updateVoteCount();
-            updateRandomImage(); // Update the image after clicking
+      // Handle upvote button click
+      document
+        .getElementById("upvote-button")
+        .addEventListener("click", function () {
+          upvotes++;
+          updateVoteCount();
+          updateRandomImage(); // Update the image after clicking
         });
 
-        // Handle downvote button click
-        document.getElementById('downvote-button').addEventListener('click', function () {
-            downvotes++;
-            updateVoteCount();
-            updateRandomImage(); // Update the image after clicking
+      // Handle downvote button click
+      document
+        .getElementById("downvote-button")
+        .addEventListener("click", function () {
+          downvotes++;
+          updateVoteCount();
+          updateRandomImage(); // Update the image after clicking
         });
 
-        // Load the first image when the page is loaded
-        window.onload = function () {
-            updateRandomImage();
-        };
+      // Load the first image when the page is loaded
+      window.onload = function () {
+        updateRandomImage();
+      };
     </script>
-</body>
-
+  </body>
 </html>
